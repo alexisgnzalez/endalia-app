@@ -8,14 +8,17 @@
   </button>
 </mat-toolbar>
 
-<h1>Directorio de Empleados</h1>
+<div style="padding-left: 25px;">
+  <h1>Directorio de Empleados</h1>
 
-<!-- <form [formGroup]="loginForm" (submit)=checkLogin()> -->
-  <mat-form-field appearance="fill">
-    <mat-label>Buscar...</mat-label>
-    <input matInput>
-  </mat-form-field>
-<!-- </form> -->
+  <!-- <form [formGroup]="loginForm" (submit)=checkLogin()> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Buscar...</mat-label>
+      <input matInput>
+    </mat-form-field>
+  <!-- </form> -->  
+</div>
+
 
 
 <div class="cards-container">
@@ -24,7 +27,7 @@
       {{employee.pic}}
     </span>
     <div>
-      <h4>{{employee.lastName + ',' + ' ' + employee.name}}</h4>
+      <h3>{{employee.lastName + ',' + ' ' + employee.name}}</h3>
       <p>{{employee.jobTitle}}</p>
       <p>{{employee.phoneNumber}}</p>
       <p>{{employee.email}}</p>
