@@ -7,3 +7,27 @@
     </span>
   </button>
 </mat-toolbar>
+
+<h1>Directorio de Empleados</h1>
+
+<!-- <form [formGroup]="loginForm" (submit)=checkLogin()> -->
+  <mat-form-field appearance="fill">
+    <mat-label>Buscar...</mat-label>
+    <input matInput>
+  </mat-form-field>
+<!-- </form> -->
+
+
+<div class="cards-container">
+  <mat-card *ngFor="let employee of myList">
+    <span class="material-icons">
+      {{employee.pic}}
+    </span>
+    <div>
+      <h4>{{employee.lastName + ',' + ' ' + employee.name}}</h4>
+      <p>{{employee.jobTitle}}</p>
+      <p>{{employee.phoneNumber}}</p>
+      <p>{{employee.email}}</p>
+    </div>
+  </mat-card>
+</div>

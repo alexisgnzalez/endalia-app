@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class UserService {
 
   userList: Users = new Users();
-  logged: boolean = false;
+  logged: boolean = true;
 
   constructor(private router: Router) {
   }

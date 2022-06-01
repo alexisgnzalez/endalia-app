@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '@app/services/user.service';
+import { EmployeeService } from '@app/services/employee.service';
 
 @Component({
   selector: 'app-employees',
@@ -8,14 +9,18 @@ import { UserService } from '@app/services/user.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  myList: any = [];
+
+  constructor(
+    private userService: UserService,
+    private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    
+    console.log(this.employeeService.employeeList.data);
+    this.myList = this.employeeService.employeeList.data;
   }
 
   loggingOut() {
-    console.log("yes?");
     this.userService.signOut();
   }
 
