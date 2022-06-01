@@ -1,16 +1,29 @@
 <div id="login-form">
   <mat-card>
-    <form>
+    <form [formGroup]="loginForm" (submit)=checkLogin()>
       <mat-form-field appearance="fill">
         <mat-label>Usuario</mat-label>
-        <input matInput>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="loginForm.controls.username.errors?.required">
+          Este campo es requerido
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Contraseña</mat-label>
-        <input matInput>
+        <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="loginForm.controls.password.errors?.required">
+          Este campo es requerido
+        </mat-error>
       </mat-form-field>
       <div>
-        <button mat-raised-button color="primary">Acceder</button>
+        <button
+          type="submit"
+          mat-raised-button
+          [ngClass]="{pdt: loginForm.controls.password.errors?.required}"
+          color="primary"
+          [disabled]="buttonDisabled">
+          Acceder
+        </button>
       </div>
     </form>
   </mat-card>
